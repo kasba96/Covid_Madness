@@ -11,6 +11,8 @@ def begin():
 
 # OUTCOMES
 
+
+
 def pass_out(why):
     '''In: Passing in the string showing player why they passed out.
 
