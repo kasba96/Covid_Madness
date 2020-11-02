@@ -1,2 +1,2 @@
 # Covid_Madness
-Covid-based adv
+Covid-themed text-based adventure game.
