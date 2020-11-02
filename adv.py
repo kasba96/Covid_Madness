@@ -7,8 +7,7 @@ negate = ["no", "nope", "n", "nah bro", "nah"]
 inventory = ["body odour"]
 bedroom = ["phone", "phone charger"]
 kitchen = ["coffee"]
-living_room = ["laptop", "yoga mat", "laptop charger"]
-shower = []
+livingroom = ["laptop", "yoga mat", "laptop charger"]
 
 def begin():
     '''Prints the welcome message'''
@@ -17,7 +16,7 @@ def begin():
 
 # HELPERS
 def represents_posint(x: str):
-    '''Returns True if x is a string representing an integer. e.g. "2", "35".
+    '''Returns True if x is a string representing a positive integer. e.g. "2", "35".
     If not, returns False.'''
 
     try:
@@ -82,7 +81,7 @@ def pass_out(why):
         exit()
 
 # ROOMS
-def shower():
+def shower_room():
     '''Actions in the shower.'''
     time.sleep(3)
     global inventory
@@ -96,8 +95,9 @@ def living_room():
 
     print("You walk into the living room.")
     global inventory
-    global living_room
-    if "yoga mat" in living_room:
+    global livingroom
+    print(livingroom)
+    if "yoga mat" in livingroom:
         print("There's a yoga mat on the floor.")
         print("Do you want to do some exercise?")
         exercise = input("Yes/No > ")
@@ -105,7 +105,7 @@ def living_room():
             time.sleep(3)
             inventory.append("endorphins")
             inventory.append("sweat")
-            living_room.remove("yoga mat")
+            livingroom.remove("yoga mat")
             print("Great job! You got in a good workout and you feel great.")
             print("Look at that! You got your daily dose of endorphins.")
             check_inventory()
@@ -114,11 +114,10 @@ def living_room():
         print("Take a shower, maybe?")
         shower = input("Y/N > ")
         if shower.lower() in affirm:
-            shower()
+            shower_room()
         else:
             print("Rip. It's hard, but you need to maintain hygiene bro.")
-
-    if "laptop" in living_room:
+    if "laptop" in livingroom:
         print("Your laptop's here. It'd be nice to finish that assignment")
         print("that's due next week.")
         work = input("Do assignment? (Y/N) > ")
